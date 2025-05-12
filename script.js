@@ -1,5 +1,12 @@
-function firstNonRepeatedChar(str) {
- // Write your code here
+function firstNonRepetedChar(str) {
+    for (let i = 0; i < str.length; i++) {
+        if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+            return str[i];
+        }
+    }
+    return null; // if no non-repeated character
 }
-const input = prompt("Enter a string");
-alert(firstNonRepeatedChar(input)); 
+
+let str = 'aabbcdd';
+let result = firstNonRepetedChar(str);
+console.log(result); // Output: 'c'
